@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prude Akakpovi | Développeur web et mobile</title>
+<meta name="description" content="Prude Akakpovi, développeur web et mobile à Calavi, Bénin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#14213D; --muted:#56607A;
+  --teal:#0E5E59; --saffron:#E9A23B; --line:#DCE1E8;
+  --display:"Sora","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1726; --surface:#172238; --ink:#E8ECF3; --muted:#9AA5BC;
+    --teal:#4FC1B6; --saffron:#F2B85C; --line:#26324A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1726; --surface:#172238; --ink:#E8ECF3; --muted:#9AA5BC;
+  --teal:#4FC1B6; --saffron:#F2B85C; --line:#26324A;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.5rem}
+
+/* Hero */
+header{padding:4.5rem 0 3.5rem;border-bottom:1px solid var(--line)}
+.status{display:inline-flex;align-items:center;gap:.5rem;font-size:.95rem;color:var(--muted);margin:0 0 1.75rem}
+.status::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px color-mix(in srgb,var(--teal) 20%,transparent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,7vw,4.6rem);line-height:1.02;letter-spacing:-.03em;margin:0}
+h1 .first{display:block;font-weight:600;color:var(--muted);font-size:.5em;letter-spacing:-.01em;margin-bottom:.35em}
+.role{font-family:var(--display);font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:600;margin:1.25rem 0 .75rem}
+.intro{max-width:60ch;color:var(--muted);margin:0 0 2rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.8rem 1.3rem;border-radius:10px;font-weight:600;text-decoration:none;font-size:1rem}
+.btn-main{background:var(--teal);color:var(--bg)}
+.btn-alt{border:1.5px solid var(--line);color:var(--ink);background:var(--surface)}
+
+/* Sections */
+section{padding:3.5rem 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--display);font-size:1.75rem;letter-spacing:-.02em;margin:0 0 .5rem}
+.lead{color:var(--muted);margin:0 0 2rem;max-width:60ch}
+
+/* Projects: the memorable part */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;position:relative;overflow:hidden}
+.project::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent,var(--teal))}
+.project.mobile{--accent:var(--saffron)}
+.kind{font-size:.85rem;font-weight:600;color:var(--muted)}
+.project h3{font-family:var(--display);font-size:1.3rem;margin:0;letter-spacing:-.01em}
+.project p{margin:0;color:var(--muted);font-size:1rem}
+.store{display:inline-flex;align-items:center;gap:.45rem;margin-top:.4rem;padding:.55rem .95rem;border-radius:10px;background:var(--ink);color:var(--bg);font-weight:600;font-size:.92rem;text-decoration:none;align-self:flex-start}
+.store svg{width:1rem;height:1rem;fill:currentColor}
+.private{font-size:.88rem;color:var(--muted);font-style:italic}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;padding-top:.6rem}
+.tag{font-size:.82rem;padding:.2rem .6rem;border-radius:999px;background:color-mix(in srgb,var(--teal) 12%,transparent);color:var(--ink)}
+.legend{display:flex;gap:1.25rem;font-size:.9rem;color:var(--muted);margin:-1rem 0 1.5rem;flex-wrap:wrap}
+.legend span::before{content:"";display:inline-block;width:.8rem;height:.8rem;border-radius:3px;margin-right:.4rem;vertical-align:-1px;background:var(--teal)}
+.legend span.m::before{background:var(--saffron)}
+
+/* Timeline */
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 2rem 1.5rem}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--teal)}
+.timeline li.now::before{background:var(--teal)}
+.when{font-size:.92rem;color:var(--muted)}
+.timeline h3{font-family:var(--display);font-size:1.15rem;margin:.15rem 0 .35rem}
+.timeline p{margin:0;color:var(--muted);max-width:62ch}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.skills h3{font-family:var(--display);font-size:1.05rem;margin:0 0 .6rem}
+.skills ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
+.skills li{padding:.35rem .8rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:.95rem}
+
+/* Contact */
+.contact{padding:4rem 0 5rem;border-bottom:0}
+.contact h2{font-size:clamp(1.8rem,4.5vw,2.6rem)}
+.contact-list{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+footer{padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+        <h1><span class="first">Prude Fridel Nektania</span>Akakpovi</h1>
+    <p class="role">Développeur web et mobile à Calavi</p>
+    <p class="intro">Bonjour, moi c'est Prude. Je développe des applications web et mobiles chez Waouh Monde depuis septembre 2024. Trois des applications sur lesquelles j'ai travaillé sont aujourd'hui sur le Play Store. Je travaille surtout avec Flutter pour le mobile, et Laravel ou NestJS pour le back-end. Je cherche maintenant un nouveau poste où continuer à apprendre et à livrer des projets concrets.</p>
+    <div class="actions">
+      <a class="btn btn-main" href="mailto:prudefridel@gmail.com">Me contacter</a>
+      <a class="btn btn-alt" href="https://github.com/Prude06" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-alt" href="https://www.linkedin.com/in/prude-akakpovi-81045624b/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="projets">
+    <div class="wrap">
+      <h2>Mes projets</h2>
+      <p class="lead">Les projets sur lesquels j'ai travaillé chez Waouh Monde. Vous pouvez installer les trois applis mobiles directement depuis le Play Store.</p>
+            <div class="projects">
+        <article class="project">
+          <span class="kind">Plateforme web</span>
+          <h3>PISJ</h3>
+          <p>Plateforme d'Information et de Signalisation Judiciaire. Je m'occupe du module qui gère les privilèges : qui a accès à quoi, et qui peut faire quelle action.</p>
+          <p class="private">Projet interne, pas de lien public. Je peux vous le montrer en entretien.</p>
+          <div class="tags"><span class="tag">Gestion des rôles</span><span class="tag">Back-end</span></div>
+        </article>
+        <article class="project mobile">
+          <span class="kind">Application mobile</span>
+          <h3>Allo Mécano</h3>
+          <p>Vous tombez en panne ? L'appli vous montre les garages autour de vous et vous permet de contacter directement un garagiste.</p>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.allo_mecano.mon_garagistes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5v19a1 1 0 0 0 1.5.86l16-9.5a1 1 0 0 0 0-1.72l-16-9.5A1 1 0 0 0 4 2.5Z"/></svg>Disponible sur Google Play</a>
+          <div class="tags"><span class="tag">Géolocalisation</span><span class="tag">Flutter</span></div>
+        </article>
+        <article class="project mobile">
+          <span class="kind">Application mobile</span>
+          <h3>Tinwinlinwin</h3>
+          <p>Une appli pour gérer son argent au quotidien : noter ses dépenses, ses entrées et garder un œil sur son budget.</p>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.tinwin.linwin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5v19a1 1 0 0 0 1.5.86l16-9.5a1 1 0 0 0 0-1.72l-16-9.5A1 1 0 0 0 4 2.5Z"/></svg>Disponible sur Google Play</a>
+          <div class="tags"><span class="tag">Finances</span><span class="tag">Flutter</span></div>
+        </article>
+        <article class="project">
+          <span class="kind">Application de gestion</span>
+          <h3>Gest Ferme</h3>
+          <p>Application de gestion de ferme. J'ai développé toute la partie utilisateurs : création de compte, connexion et profils.</p>
+          <p class="private">Projet interne, pas de lien public. Je peux vous le montrer en entretien.</p>
+          <div class="tags"><span class="tag">Authentification</span><span class="tag">Module utilisateurs</span></div>
+        </article>
+        <article class="project mobile">
+          <span class="kind">Application mobile</span>
+          <h3>Nomba</h3>
+          <p>Une petite appli qui permet de mettre à jour ses numéros de téléphone rapidement.</p>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.nomba.waouh" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5v19a1 1 0 0 0 1.5.86l16-9.5a1 1 0 0 0 0-1.72l-16-9.5A1 1 0 0 0 4 2.5Z"/></svg>Disponible sur Google Play</a>
+          <div class="tags"><span class="tag">Mise à jour de données</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="parcours">
+    <div class="wrap">
+      <h2>Mon parcours</h2>
+            <ol class="timeline">
+        <li class="now">
+          <span class="when">Sept. 2024 à aujourd'hui</span>
+          <h3>Développeur web & mobile, Waouh Monde (Calavi)</h3>
+          <p>Mon premier poste. J'y ai travaillé sur cinq projets, dont trois applis mobiles publiées.</p>
+        </li>
+        <li>
+          <span class="when">Mai à août 2024</span>
+          <h3>Stagiaire en développement mobile, Rab Tech (Ste Rita)</h3>
+          <p>C'est là que j'ai appris Flutter, en construisant une appli de location de voitures.</p>
+        </li>
+        <li>
+          <span class="when">Février à avril 2024</span>
+          <h3>Stagiaire en développement web, Taskbar (Dekoungbé)</h3>
+          <p>Mon premier stage, où j'ai découvert Laravel et NestJS.</p>
+        </li>
+        <li>
+          <span class="when">2021 à 2023</span>
+          <h3>Licence SIL (Système Informatique et Logiciel), École Supérieure Sainte Félicité</h3>
+          <p>Pour ma soutenance, j'ai réalisé un logiciel de gestion pour un centre de formation en secrétariat bureautique, qui édite aussi les bulletins de fin de formation. J'ai également suivi une licence en Informatique Industrielle et Maintenance dans la même école.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="wrap">
+      <h2>Ce que j'utilise</h2>
+            <div class="skills">
+        <div><h3>Front-end</h3><ul><li>React</li><li>Vue.js</li><li>Angular</li></ul></div>
+        <div><h3>Back-end</h3><ul><li>Laravel</li><li>NestJS</li><li>Spring Boot</li></ul></div>
+        <div><h3>Mobile</h3><ul><li>Flutter</li></ul></div>
+        <div><h3>Autres</h3><ul><li>Maintenance informatique</li><li>Réseaux (bases)</li></ul></div>
+        <div><h3>Langues</h3><ul><li>Français</li><li>Anglais</li><li>Fon</li><li>Mina</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Me contacter</h2>
+      <p class="lead">Le plus simple, c'est un e-mail ou un appel. Je réponds vite.</p>
+      <div class="contact-list">
+        <a class="btn btn-main" href="mailto:prudefridel@gmail.com">prudefridel@gmail.com</a>
+        <a class="btn btn-alt" href="tel:+2290162002082">+229 01 62 00 20 82</a>
+        <a class="btn btn-alt" href="https://github.com/Prude06" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-alt" href="https://www.linkedin.com/in/prude-akakpovi-81045624b/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Prude Akakpovi, Godomey, Bénin, 2026</div>
+</footer>
+
+</body>
+</html>
